@@ -35,4 +35,4 @@ FROM movie_actors AS mov_act_t
 	JOIN actors AS act_t ON act_t.id = mov_act_t.actor_id 
 	WHERE act_t.name != 'N/A'
 GROUP BY act_t.name
-ORDER BY COUNT(*) DESC LIMIT 1;
+ORDER BY COUNT(act_t.name) DESC LIMIT 1;
