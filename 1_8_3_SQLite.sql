@@ -24,7 +24,7 @@ SELECT name FROM (
 	JOIN writers AS wrt_t ON writer_id = wrt_t.id
 	WHERE wrt_t.name != 'N/A'	
 GROUP BY writer_id 
-ORDER BY count(writer_id) DESC LIMIT 1;;
+ORDER BY count(writer_id) DESC LIMIT 1;
 
 
 
