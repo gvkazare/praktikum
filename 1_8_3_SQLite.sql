@@ -14,13 +14,13 @@ WHERE id IN (
 Кто из сценаристов принял участие в большинстве фильмов?
 
 SELECT name FROM (
-		SELECT writer AS writer_id FROM movies 	
-			WHERE writer_id != ''				
-		UNION ALL			
-		SELECT json_extract(writers_t.value, "$.id") AS writer_id FROM (
-			SELECT writers FROM movies 
-				WHERE writers != '') AS writers_json_array, json_each(writers_json_array.writers) AS writers_t		
-		)		
+	SELECT writer AS writer_id FROM movies 	
+		WHERE writer_id != ''				
+	UNION ALL			
+	SELECT json_extract(writers_t.value, "$.id") AS writer_id FROM (
+		SELECT writers FROM movies 
+			WHERE writers != '') AS writers_json_array, json_each(writers_json_array.writers) AS writers_t		
+	)		
 	JOIN writers AS wrt_t ON writer_id = wrt_t.id
 	WHERE wrt_t.name != 'N/A'	
 GROUP BY writer_id 
