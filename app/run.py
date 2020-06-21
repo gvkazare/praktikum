@@ -15,3 +15,6 @@ def client_info():
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8000)
+
+#venv_praktikum
+#python app/run.py
