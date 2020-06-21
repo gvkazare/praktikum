@@ -2,11 +2,9 @@
 
 SELECT name FROM actors 
 WHERE id IN (
-	SELECT actor_id 
-	FROM movie_actors 
+	SELECT actor_id FROM movie_actors 
 	WHERE movie_id = (
-		SELECT id 
-		FROM movies 
+		SELECT id FROM movies 
 		WHERE director LIKE '%Jørgen Lerdam%'));
 
 
@@ -15,11 +13,11 @@ WHERE id IN (
 
 SELECT name FROM (
 	SELECT writer AS writer_id FROM movies 	
-		WHERE writer_id != ''				
-	UNION ALL			
+	WHERE writer_id != ''		
+	UNION ALL		
 	SELECT json_extract(writers_t.value, "$.id") AS writer_id FROM (
 		SELECT writers FROM movies 
-			WHERE writers != '') AS writers_json_array, json_each(writers_json_array.writers) AS writers_t		
+		WHERE writers != '') AS writers_json_array, json_each(writers_json_array.writers) AS writers_t		
 	)		
 	JOIN writers AS wrt_t ON writer_id = wrt_t.id
 	WHERE wrt_t.name != 'N/A'	
