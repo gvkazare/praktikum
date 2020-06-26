@@ -134,7 +134,7 @@ def run():
             "description": "The Imperial Forces, under orders from cruel Darth Vader",
             "director": "George Lucas",
             "writers": "[{'id': '0b60f2f38d7ef03db580c18d214a403eb0877b34'}, {'id': '0b60f2f35988f621775659dbb7ad784c3795d71b'}, {'id': '0b60f2f348adc2f668a9a090165e24f3d3a7cf5a'}]",
-            "writers_names": "George Lucas",
+            "writers_names": "Leigh Brackett, Lawrence Kasdan, George Lucas",
             "actors": "[{'id': '1'}, {'id': '2'}, {'id': '3'}, {'id': '5'}]",
             "actors_names": "Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing"
          }
