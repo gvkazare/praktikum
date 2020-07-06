@@ -34,7 +34,6 @@ def movie_id(movie_id):
                     }
                 }
 
-
         res = client.search(index="movies", doc_type="_doc", body=body)
 
         res = res['hits']['hits']
@@ -84,8 +83,6 @@ def api_movies():
                         }
                     }
                 }
-
-        # import ipdb; ipdb.set_trace()
 
         res = client.search(index="movies", doc_type="_doc", body=body)
         res = res['hits']['hits']
