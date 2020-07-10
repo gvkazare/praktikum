@@ -15,6 +15,7 @@ client = Elasticsearch()
 
 
 
+
 @app.route('/', methods=['GET'])
 def index():
     return "Flask works!"
@@ -31,7 +32,6 @@ def movie_id(movie_id):
     if request.method == 'GET':
         schema = {'movie_id': {'type': 'string', 'empty': False}}
         document = {'movie_id': movie_id}
-
 
         if not v.validate(document, schema):
             return json.dumps(v.errors)
